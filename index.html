@@ -117,9 +117,31 @@
       };
       document.body.appendChild(script);
     </script>
-	<script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
-      <div id="applixir_vanishing_div" hidden>
-          <iframe id="applixir_parent" allow="autoplay"></iframe>
-      </div>
+	<script type="text/javascript" src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
+    <div id="applixir_vanishing_div" hidden>
+        <iframe id="applixir_parent" allow="autoplay"></iframe>
+    </div>
+
+    <script type="application/javascript">
+        function adStatusCallback(status) {
+            if (status == "sys-closing") {
+                window.close();
+            }
+            window.opener.postMessage(status, "*"); // recommended: replace "*" with game domain after initial tests
+            // console.log('Ad Status: ' + status);
+        }
+
+        var options;
+
+        window.addEventListener('message', function initZ2(e) {
+            if (e.data.indexOf("loadOptions") == 0) {
+                options = JSON.parse(e.data.substring(12));
+                options["adStatusCb"] = adStatusCallback;
+                invokeApplixirVideoUnit(options);
+                window.removeEventListener('message', initZ2, false);
+            }
+        }, false);
+        window.opener.postMessage('z2-ready', "*"); // recommended: replace "*" with game domain after initial tests
+    </script>
   </body>
 </html>
