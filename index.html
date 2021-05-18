@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | SpaceArcade</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=350 height=622 style="width: 350px; height: 622px; background: #231F20"></canvas>
+   <div id="unityContainer" style="width: 960px; height: 600px"></div>
     <script src="Build/Build.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -29,5 +29,9 @@
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
+	<script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
+      <div id="applixir_vanishing_div" hidden>
+          <iframe id="applixir_parent" allow="autoplay"></iframe>
+      </div>
   </body>
 </html>
