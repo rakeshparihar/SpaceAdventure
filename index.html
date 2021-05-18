@@ -58,9 +58,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build.data.br",
-        frameworkUrl: buildUrl + "/Build.framework.js.br",
-        codeUrl: buildUrl + "/Build.wasm.br",
+        dataUrl: buildUrl + "/Build.data",
+        frameworkUrl: buildUrl + "/Build.framework.js",
+        codeUrl: buildUrl + "/Build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "SpaceArcade",
@@ -117,7 +117,8 @@
       };
       document.body.appendChild(script);
     </script>
-	<script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
+	<meta http-equiv="content-encoding" content="gzip" />
+	 <script type='text/javascript' src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>
       <div id="applixir_vanishing_div" hidden>
           <iframe id="applixir_parent" allowed="autoplay"></iframe>
       </div>
