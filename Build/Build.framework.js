@@ -3782,6 +3782,7 @@ function _JS_WebRequest_SetTimeout(request, timeout) {
  wr.requestInstances[request].timeout = timeout;
 }
 function _adStatusCallbackX(status) {
+ console.log("Ad Status:", status);
  var iresult = 0;
  switch (status) {
  case "ad-watched":
