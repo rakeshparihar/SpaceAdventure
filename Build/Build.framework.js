@@ -3821,6 +3821,9 @@ function _adStatusCallbackX(status) {
  case "ad-initready":
   iresult = 12;
   break;
+ case "ad-rewarded":
+  iresult = 13;
+  break;
  default:
   iresult = 0;
   break;
